@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|c:\\users\\touqa2003\\source\\repos\\spot_difference_game\\spot_difference_game\\main_page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|solutionrelative:spot_difference_game\\main_page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|c:\\users\\touqa2003\\source\\repos\\spot_difference_game\\spot_difference_game\\modeselectionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|solutionrelative:spot_difference_game\\modeselectionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|c:\\users\\touqa2003\\source\\repos\\spot_difference_game\\spot_difference_game\\medium_level_timer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|solutionrelative:spot_difference_game\\medium_level_timer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|c:\\users\\touqa2003\\source\\repos\\spot_difference_game\\spot_difference_game\\medium_level_timer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|solutionrelative:spot_difference_game\\medium_level_timer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Main_page.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\Main_page.cs",
+              "RelativeDocumentMoniker": "Spot_Difference_Game\\Main_page.cs",
+              "ToolTip": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\Main_page.cs [Design]",
+              "RelativeToolTip": "Spot_Difference_Game\\Main_page.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T14:38:44.484Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ModeSelectionForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\ModeSelectionForm.cs",
+              "RelativeDocumentMoniker": "Spot_Difference_Game\\ModeSelectionForm.cs",
+              "ToolTip": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\ModeSelectionForm.cs [Design]",
+              "RelativeToolTip": "Spot_Difference_Game\\ModeSelectionForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T14:38:36.238Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Medium_level_Timer.cs",
+              "DocumentMoniker": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\Medium_level_Timer.cs",
+              "RelativeDocumentMoniker": "Spot_Difference_Game\\Medium_level_Timer.cs",
+              "ToolTip": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\Medium_level_Timer.cs",
+              "RelativeToolTip": "Spot_Difference_Game\\Medium_level_Timer.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAtwCEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T14:34:44.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Medium_level_Timer.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\Medium_level_Timer.cs",
+              "RelativeDocumentMoniker": "Spot_Difference_Game\\Medium_level_Timer.cs",
+              "ToolTip": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\Medium_level_Timer.cs [Design]",
+              "RelativeToolTip": "Spot_Difference_Game\\Medium_level_Timer.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T14:34:42.857Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -38,6 +38,7 @@
             timer1 = new System.Windows.Forms.Timer(components);
             btnBack = new Button();
             openFileDialog1 = new OpenFileDialog();
+            lblTimer = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -67,12 +68,13 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(684, 110);
+            pictureBox2.Location = new Point(680, 114);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(508, 488);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 11;
             pictureBox2.TabStop = false;
+            pictureBox2.MouseClick += pictureBox2_MouseClick;
             // 
             // pictureBox1
             // 
@@ -118,12 +120,24 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // lblTimer
+            // 
+            lblTimer.AutoSize = true;
+            lblTimer.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTimer.Location = new Point(536, 597);
+            lblTimer.Name = "lblTimer";
+            lblTimer.Size = new Size(149, 38);
+            lblTimer.TabIndex = 16;
+            lblTimer.Text = "Timer : 40";
+            lblTimer.Click += lblTimer_Click_2;
+            // 
             // Easy_level_Timer
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PapayaWhip;
             ClientSize = new Size(1228, 644);
+            Controls.Add(lblTimer);
             Controls.Add(btnBack);
             Controls.Add(label2);
             Controls.Add(pictureBox2);
@@ -151,5 +165,6 @@
         private System.Windows.Forms.Timer timer1;
         private Button btnBack;
         private OpenFileDialog openFileDialog1;
+        private Label lblTimer;
     }
 }

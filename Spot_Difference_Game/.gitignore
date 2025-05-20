@@ -1,11 +1,9 @@
-﻿# Ignore Visual Studio temporary and build files
-.vs/
+﻿.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.vscode/
 bin/
 obj/
-*.user
-*.suo
-*.cache
-*.log
-*.sdf
-*.dbmdl
-*.pdb

@@ -47,5 +47,10 @@ namespace Spot_Difference_Game
         {
 
         }
+
+        private void Main_page_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

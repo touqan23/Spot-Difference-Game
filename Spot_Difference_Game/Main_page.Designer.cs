@@ -74,7 +74,7 @@
             btnMedium.Name = "btnMedium";
             btnMedium.Size = new Size(332, 76);
             btnMedium.TabIndex = 8;
-            btnMedium.Text = " Medium level";
+            btnMedium.Text = "  Medium level";
             btnMedium.UseVisualStyleBackColor = true;
             btnMedium.Click += btnMedium_Click;
             // 
@@ -149,6 +149,7 @@
             Controls.Add(title);
             Name = "Main_page";
             Text = "Main_page";
+            Load += Main_page_Load;
             ((System.ComponentModel.ISupportInitialize)timer).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

@@ -46,20 +46,21 @@
             // 
             // lblRemaining
             // 
-            lblRemaining.Location = new Point(555, 373);
+            lblRemaining.Location = new Point(558, 417);
             lblRemaining.Name = "lblRemaining";
-            lblRemaining.Size = new Size(123, 55);
+            lblRemaining.Size = new Size(105, 55);
             lblRemaining.TabIndex = 23;
-            lblRemaining.Text = "Remaining: 8\r\n";
+            lblRemaining.Text = "Attempts Left : 10";
+            lblRemaining.Click += lblRemaining_Click;
             // 
             // lblFound
             // 
-            lblFound.AutoSize = true;
-            lblFound.Location = new Point(558, 289);
+            lblFound.Location = new Point(555, 325);
             lblFound.Name = "lblFound";
-            lblFound.Size = new Size(87, 25);
+            lblFound.Size = new Size(123, 65);
             lblFound.TabIndex = 22;
-            lblFound.Text = "Found: 0 ";
+            lblFound.Text = "Differences left: ";
+            lblFound.Click += lblFound_Click;
             // 
             // label2
             // 
@@ -79,6 +80,8 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 20;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            pictureBox2.MouseClick += pictureBox2_MouseClick;
             // 
             // pictureBox1
             // 
@@ -88,6 +91,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // btnLoadimage2
             // 

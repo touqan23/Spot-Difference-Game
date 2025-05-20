@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|c:\\users\\touqa2003\\source\\repos\\spot_difference_game\\spot_difference_game\\easy_level_timer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|solutionrelative:spot_difference_game\\easy_level_timer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|c:\\users\\touqa2003\\source\\repos\\spot_difference_game\\spot_difference_game\\modeselectionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|solutionrelative:spot_difference_game\\modeselectionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|c:\\users\\touqa2003\\source\\repos\\spot_difference_game\\spot_difference_game\\easy_level_timer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|solutionrelative:spot_difference_game\\easy_level_timer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|c:\\users\\touqa2003\\source\\repos\\spot_difference_game\\spot_difference_game\\easy_level_tries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|solutionrelative:spot_difference_game\\easy_level_tries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|c:\\users\\touqa2003\\source\\repos\\spot_difference_game\\spot_difference_game\\easy_level_tries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|solutionrelative:spot_difference_game\\easy_level_tries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|c:\\users\\touqa2003\\source\\repos\\spot_difference_game\\spot_difference_game\\imagedifferencedetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|solutionrelative:spot_difference_game\\imagedifferencedetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|c:\\users\\touqa2003\\source\\repos\\spot_difference_game\\spot_difference_game\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|solutionrelative:spot_difference_game\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EE0B3A98-F7F5-4EF9-A3DC-586C1656A039}|Spot_Difference_Game\\Spot_Difference_Game.csproj|c:\\users\\touqa2003\\source\\repos\\spot_difference_game\\spot_difference_game\\easy_level_timer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,11 +34,61 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ModeSelectionForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\ModeSelectionForm.cs",
+              "RelativeDocumentMoniker": "Spot_Difference_Game\\ModeSelectionForm.cs",
+              "ToolTip": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\ModeSelectionForm.cs [Design]",
+              "RelativeToolTip": "Spot_Difference_Game\\ModeSelectionForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T19:52:27.668Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Easy_level_Tries.cs",
+              "DocumentMoniker": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\Easy_level_Tries.cs",
+              "RelativeDocumentMoniker": "Spot_Difference_Game\\Easy_level_Tries.cs",
+              "ToolTip": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\Easy_level_Tries.cs",
+              "RelativeToolTip": "Spot_Difference_Game\\Easy_level_Tries.cs",
+              "ViewState": "AgIAALkAAAAAAAAAAAAUwMMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T19:35:20.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Easy_level_Tries.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\Easy_level_Tries.cs",
+              "RelativeDocumentMoniker": "Spot_Difference_Game\\Easy_level_Tries.cs",
+              "ToolTip": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\Easy_level_Tries.cs [Design]",
+              "RelativeToolTip": "Spot_Difference_Game\\Easy_level_Tries.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T19:35:18.024Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\.gitignore",
+              "RelativeDocumentMoniker": "Spot_Difference_Game\\.gitignore",
+              "ToolTip": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\.gitignore",
+              "RelativeToolTip": "Spot_Difference_Game\\.gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-20T19:21:26.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ImageDifferenceDetector.cs",
               "DocumentMoniker": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\ImageDifferenceDetector.cs",
               "RelativeDocumentMoniker": "Spot_Difference_Game\\ImageDifferenceDetector.cs",
@@ -43,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Easy_level_Timer.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\Easy_level_Timer.Designer.cs",
               "RelativeDocumentMoniker": "Spot_Difference_Game\\Easy_level_Timer.Designer.cs",
@@ -52,31 +110,6 @@
               "ViewState": "AgIAAEAAAAAAAAAAAAAswIIAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T07:56:26.446Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Easy_level_Timer.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\Easy_level_Timer.cs",
-              "RelativeDocumentMoniker": "Spot_Difference_Game\\Easy_level_Timer.cs",
-              "ToolTip": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\Easy_level_Timer.cs [Design]",
-              "RelativeToolTip": "Spot_Difference_Game\\Easy_level_Timer.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T06:57:07.76Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Easy_level_Timer.cs",
-              "DocumentMoniker": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\Easy_level_Timer.cs",
-              "RelativeDocumentMoniker": "Spot_Difference_Game\\Easy_level_Timer.cs",
-              "ToolTip": "C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\Easy_level_Timer.cs",
-              "RelativeToolTip": "Spot_Difference_Game\\Easy_level_Timer.cs",
-              "ViewState": "AgIAAKoAAAAAAAAAAAAAAL4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T14:38:38.362Z",
               "EditorCaption": ""
             }
           ]

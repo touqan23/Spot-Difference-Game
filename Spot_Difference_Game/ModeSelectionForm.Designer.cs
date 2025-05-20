@@ -44,7 +44,7 @@
             btnTimerMode.Font = new Font("Impact", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnTimerMode.Location = new Point(193, 113);
             btnTimerMode.Name = "btnTimerMode";
-            btnTimerMode.Size = new Size(283, 77);
+            btnTimerMode.Size = new Size(297, 77);
             btnTimerMode.TabIndex = 1;
             btnTimerMode.Text = "Timer Mode";
             btnTimerMode.UseVisualStyleBackColor = true;
@@ -52,12 +52,12 @@
             // 
             // btnLimitedTries
             // 
-            btnLimitedTries.Font = new Font("Impact", 11F);
+            btnLimitedTries.Font = new Font("Impact", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLimitedTries.Location = new Point(193, 224);
             btnLimitedTries.Name = "btnLimitedTries";
-            btnLimitedTries.Size = new Size(283, 77);
+            btnLimitedTries.Size = new Size(297, 77);
             btnLimitedTries.TabIndex = 2;
-            btnLimitedTries.Text = "Limited Attempts Mode";
+            btnLimitedTries.Text = " Limited Attempts Mode\r\n";
             btnLimitedTries.TextAlign = ContentAlignment.MiddleRight;
             btnLimitedTries.UseVisualStyleBackColor = true;
             btnLimitedTries.Click += btnLimitedTries_Click;
@@ -88,7 +88,7 @@
             // 
             pictureBox1.BackColor = SystemColors.ButtonHighlight;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(205, 237);
+            pictureBox1.Location = new Point(205, 239);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(55, 49);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;

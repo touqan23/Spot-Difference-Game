@@ -23,10 +23,11 @@ namespace Spot_Difference_Game
             Mat thresh = new Mat();
             CvInvoke.Threshold(gray, thresh, 50, 255, Emgu.CV.CvEnum.ThresholdType.Binary);
 
-            CvInvoke.Dilate(thresh, thresh, null, new Point(-1, -1), 2, Emgu.CV.CvEnum.BorderType.Default, new MCvScalar());
+            CvInvoke.Dilate(thresh, thresh, null, new Point(-1, -1), 2, Emgu.CV.CvEnum.BorderType.Default, new MCvScalar());//لتوسيع الفروق مشان موضوع اكتر من بكسل
 
             using (VectorOfVectorOfPoint contours = new VectorOfVectorOfPoint())
             {
+                //عم دور على الحواف
                 CvInvoke.FindContours(thresh, contours, null, Emgu.CV.CvEnum.RetrType.External, Emgu.CV.CvEnum.ChainApproxMethod.ChainApproxSimple);
                 DifferenceAreas.Clear();
                 for (int i = 0; i < contours.Size; i++)

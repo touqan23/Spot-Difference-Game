@@ -38,6 +38,7 @@
             timer1 = new System.Windows.Forms.Timer(components);
             btnBack = new Button();
             openFileDialog1 = new OpenFileDialog();
+            lblTimer = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -60,6 +61,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 20;
             pictureBox2.TabStop = false;
+            pictureBox2.MouseClick += pictureBox2_MouseClick;
             // 
             // pictureBox1
             // 
@@ -118,12 +120,24 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // lblTimer
+            // 
+            lblTimer.AutoSize = true;
+            lblTimer.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTimer.Location = new Point(540, 601);
+            lblTimer.Name = "lblTimer";
+            lblTimer.Size = new Size(149, 38);
+            lblTimer.TabIndex = 23;
+            lblTimer.Text = "Timer : 10";
+            lblTimer.Click += lblTimer_Click;
+            // 
             // Hard_level_Timer
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PapayaWhip;
             ClientSize = new Size(1228, 644);
+            Controls.Add(lblTimer);
             Controls.Add(label2);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -151,5 +165,6 @@
         private System.Windows.Forms.Timer timer1;
         private Button btnBack;
         private OpenFileDialog openFileDialog1;
+        private Label lblTimer;
     }
 }

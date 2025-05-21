@@ -16,10 +16,10 @@ namespace Spot_Difference_Game
         private ImageDifferenceDetector detector = new ImageDifferenceDetector();
         private Bitmap image1, image2;
         private SoundManager soundManager = new SoundManager();
-        private string correctSoundPath = @"C:\Users\Touqa2003\source\repos\Spot_Difference_Game\Spot_Difference_Game\Sounds\correct.wav";
-        private string wrongSoundPath = @"C:\Users\Touqa2003\source\repos\Spot_Difference_Game\Spot_Difference_Game\Sounds\wrong.mp3";
-        private string winSoundPath = @"C:\Users\Touqa2003\source\repos\Spot_Difference_Game\Spot_Difference_Game\Sounds\588234__mehraniiii__win.wav";
-        private string loseSoundPath = @"C:\Users\Touqa2003\source\repos\Spot_Difference_Game\Spot_Difference_Game\Sounds\382310__mountain_man__game-over-arcade.wav";
+        private string correctSoundPath = @"Sounds/correct.wav";
+        private string wrongSoundPath = @"Sounds/wrong.mp3";
+        private string winSoundPath = @"Sounds/588234__mehraniiii__win.wav";
+        private string loseSoundPath = @"Sounds/382310__mountain_man__game-over-arcade.wav";
         private int maxAttempts = 10;
         private int currentAttempts = 0;
         public Easy_level_Tries()
@@ -34,7 +34,7 @@ namespace Spot_Difference_Game
 
         private void btnLoadimage1_Click(object sender, EventArgs e)
         {
-            string imagePath = "C:\\Users\\Touqa2003\\Downloads\\5859645168246966330.jpg"; // عدلي المسار حسب صورتك
+            string imagePath = "pictures/1(1).jpg"; 
 
             if (File.Exists(imagePath))
             {
@@ -52,7 +52,7 @@ namespace Spot_Difference_Game
 
         private void btnLoadimage2_Click(object sender, EventArgs e)
         {
-            string imagePath = "C:\\Users\\Touqa2003\\Downloads\\5859645168246966330edited9.jpg"; // عدلي المسار حسب صورتك
+            string imagePath = "pictures/1(2).jpg"; 
 
             if (File.Exists(imagePath))
             {
@@ -130,35 +130,29 @@ namespace Spot_Difference_Game
                 EndGame();
                 return;
             }
-
             currentAttempts++;
             lblRemaining.Text = $"Attempts Left: {maxAttempts - currentAttempts}";
-
             float scaleX = (float)image2.Width / pictureBox2.Width;
             float scaleY = (float)image2.Height / pictureBox2.Height;
             Point realClick = new Point((int)(e.X * scaleX), (int)(e.Y * scaleY));
-
             int tolerance = 25;
-
             Rectangle matchedArea = detector.DifferenceAreas.FirstOrDefault(r =>
             {
                 Rectangle expanded = Rectangle.Inflate(r, tolerance, tolerance);
                 return expanded.Contains(realClick);
             });
-
             if (!matchedArea.IsEmpty)
             {
                 // رسم دائرة خضراء
                 Graphics g = pictureBox2.CreateGraphics();
+                
                 g.DrawEllipse(Pens.Green, e.X - 10, e.Y - 10, 40, 40);
                 g.Dispose();
 
                 soundManager.PlaySound(correctSoundPath);
                 detector.DifferenceAreas.Remove(matchedArea);
-
                 // تحديث عدد الفروق المتبقية
                 lblFound.Text = $"Differences left: {detector.DifferenceAreas.Count}";
-
                 if (detector.DifferenceAreas.Count == 0)
                 {
                     MessageBox.Show("You found all differences!");
@@ -169,16 +163,17 @@ namespace Spot_Difference_Game
             {
                 // رسم دائرة حمراء
                 Graphics g = pictureBox2.CreateGraphics();
+                
                 g.DrawEllipse(Pens.Red, e.X - 10, e.Y - 10, 40, 40);
                 g.Dispose();
 
                 soundManager.PlaySound(wrongSoundPath);
 
-                // تحديث عدد الفروق (حتى لو لم تتغير)
+                // تحديث عدد الفروق 
                 lblFound.Text = $"Differences left: {detector.DifferenceAreas.Count}";
             }
-                // Check if player ran out of attempts
-                if (currentAttempts >= maxAttempts && detector.DifferenceAreas.Count > 0)
+            // Check if player ran out of attempts
+            if (currentAttempts >= maxAttempts && detector.DifferenceAreas.Count > 0)
             {
                 MessageBox.Show("No attempts left!");
                 EndGame();
@@ -193,7 +188,12 @@ namespace Spot_Difference_Game
 
         private void lblFound_Click(object sender, EventArgs e)
         {
-          
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -9,9 +9,42 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="pictures\1 %281%29.jpg" />
+    <None Remove="pictures\1 %282%29.jpg" />
+    <None Remove="Sounds\382310__mountain_man__game-over-arcade.wav" />
+    <None Remove="Sounds\588234__mehraniiii__win.wav" />
+    <None Remove="Sounds\correct.wav" />
+    <None Remove="Sounds\wrong.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Emgu.CV" Version="4.10.0.5680" />
     <PackageReference Include="Emgu.CV.Bitmap" Version="4.10.0.5680" />
     <PackageReference Include="NAudio" Version="2.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="pictures\1 (1).jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="pictures\1 (2).jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\382310__mountain_man__game-over-arcade.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\588234__mehraniiii__win.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\correct.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\wrong.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

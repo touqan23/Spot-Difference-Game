@@ -63,8 +63,9 @@
             label2.Name = "label2";
             label2.Size = new Size(803, 38);
             label2.TabIndex = 12;
-            label2.Text = "There are eight differences int the image below . can you spot them all and win the game?";
+            label2.Text = "There are five differences int the image below . can you spot them all and win the game?";
             label2.TextAlign = ContentAlignment.MiddleCenter;
+            label2.Click += label2_Click;
             // 
             // pictureBox2
             // 

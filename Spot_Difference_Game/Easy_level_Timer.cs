@@ -16,12 +16,10 @@ namespace Spot_Difference_Game
         private ImageDifferenceDetector detector = new ImageDifferenceDetector();
         private Bitmap image1, image2;
         private SoundManager soundManager = new SoundManager();
-        private string correctSoundPath = @"C:\Users\Touqa2003\source\repos\Spot_Difference_Game\Spot_Difference_Game\Sounds\correct.wav";
-        private string wrongSoundPath = @"C:\Users\Touqa2003\source\repos\Spot_Difference_Game\Spot_Difference_Game\Sounds\wrong.mp3";
-        private string winSoundPath = @"C:\Users\Touqa2003\source\repos\Spot_Difference_Game\Spot_Difference_Game\Sounds\588234__mehraniiii__win.wav";
-        private string loseSoundPath = @"C:\Users\Touqa2003\source\repos\Spot_Difference_Game\Spot_Difference_Game\Sounds\382310__mountain_man__game-over-arcade.wav";
-        //private int allowedTries = 10;
-        //private int currentTries = 0;
+        private string correctSoundPath = @"Sounds/correct.wav";
+        private string wrongSoundPath = @"Sounds/wrong.mp3";
+        private string winSoundPath = @"Sounds/588234__mehraniiii__win.wav";
+        private string loseSoundPath = @"Sounds/382310__mountain_man__game-over-arcade.wav";
         private System.Windows.Forms.Timer gameTimer;
         private int totalSeconds = 40;
         private bool isTimerMode = false;
@@ -74,7 +72,7 @@ namespace Spot_Difference_Game
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string imagePath = "C:\\Users\\Touqa2003\\Downloads\\5859645168246966330.jpg"; // عدلي المسار حسب صورتك
+            string imagePath = "pictures/1(1).jpg"; 
 
             if (File.Exists(imagePath))
             {
@@ -93,7 +91,7 @@ namespace Spot_Difference_Game
 
         private void btnLoadimage2_Click(object sender, EventArgs e)
         {
-            string imagePath = "C:\\Users\\Touqa2003\\Downloads\\5859645168246966330edited9.jpg"; // عدلي المسار حسب صورتك
+            string imagePath = "pictures/1(2).jpg"; 
             gameTimer.Start();
 
             if (File.Exists(imagePath))
@@ -142,6 +140,7 @@ namespace Spot_Difference_Game
             if (!matchedArea.IsEmpty)
             {
                 Graphics g = pictureBox2.CreateGraphics();
+                
                 g.DrawEllipse(Pens.Green, e.X - 10, e.Y - 10, 40, 40);
                 g.Dispose();
 
@@ -158,14 +157,17 @@ namespace Spot_Difference_Game
             else
             {
                 Graphics g = pictureBox2.CreateGraphics();
+               
                 g.DrawEllipse(Pens.Red, e.X - 10, e.Y - 10, 40, 40);
                 g.Dispose();
 
                 soundManager.PlaySound(wrongSoundPath);
+
+
             }
         }
 
-        
+
 
         private void EndGame()
         {
@@ -202,6 +204,11 @@ namespace Spot_Difference_Game
         }
 
         private void lblTimer_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

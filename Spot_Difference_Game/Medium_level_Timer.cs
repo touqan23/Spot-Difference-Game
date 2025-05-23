@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Emgu.CV;
+using Emgu.CV.Structure;
 
 namespace Spot_Difference_Game
 {
@@ -21,7 +22,7 @@ namespace Spot_Difference_Game
         private string winSoundPath = @"Sounds/588234__mehraniiii__win.wav";
         private string loseSoundPath = @"Sounds/382310__mountain_man__game-over-arcade.wav";
         private System.Windows.Forms.Timer gameTimer;
-        private int totalSeconds = 20;
+        private int totalSeconds = 40;
         private bool isTimerMode = false;
         public Medium_level_Timer()
         {
@@ -35,7 +36,7 @@ namespace Spot_Difference_Game
 
         private void btnLoadimage1_Click(object sender, EventArgs e)
         {
-            string imagePath = "pictures/1(1).jpg";
+            string imagePath = "pictures/medium.jpg";
 
             if (File.Exists(imagePath))
             {
@@ -53,7 +54,7 @@ namespace Spot_Difference_Game
 
         private void btnLoadimage2_Click(object sender, EventArgs e)
         {
-            string imagePath = "pictures/1(2).jpg";
+            string imagePath = "pictures/medium(edited).jpg";
             gameTimer.Start();
 
             if (File.Exists(imagePath))
@@ -111,34 +112,33 @@ namespace Spot_Difference_Game
 
         private void pictureBox2_MouseClick(object sender, MouseEventArgs e)
         {
-            if (image2 == null || detector.DifferenceAreas.Count == 0) return;
+            if (image2 == null || detector.DifferenceCircles.Count == 0) return;
 
             float scaleX = (float)image2.Width / pictureBox2.Width;
             float scaleY = (float)image2.Height / pictureBox2.Height;
             Point realClick = new Point((int)(e.X * scaleX), (int)(e.Y * scaleY));
 
-            // السماح بهامش أكبر حول نقطة الفرق
-            int tolerance = 25; // 👈 غيري هذا الرقم لتكبير أو تصغير النطاق المقبول
+            int tolerance = 25;
 
-            Rectangle matchedArea = detector.DifferenceAreas.FirstOrDefault(r =>
+            var matchedCircle = detector.DifferenceCircles.FirstOrDefault(circle =>
             {
-                Rectangle expanded = Rectangle.Inflate(r, tolerance, tolerance); // توسعة المستطيل
-                return expanded.Contains(realClick);
+                float dx = realClick.X - circle.Center.X;
+                float dy = realClick.Y - circle.Center.Y;
+                float distance = (float)Math.Sqrt(dx * dx + dy * dy);
+                return distance <= circle.Radius + tolerance;
             });
 
-            if (!matchedArea.IsEmpty)
+            if (!matchedCircle.Equals(default(CircleF)))
             {
-                Graphics g = pictureBox2.CreateGraphics();
-                
-                g.DrawEllipse(Pens.Green, e.X - 10, e.Y - 10, 40, 40);
-                g.Dispose();
+                using (Graphics g = pictureBox2.CreateGraphics())
+                {
+                    g.DrawEllipse(Pens.Green, e.X - 10, e.Y - 10, 40, 40);
+                }
 
                 soundManager.PlaySound(correctSoundPath);
+                detector.DifferenceCircles.Remove(matchedCircle); // حذف الفرق
 
-
-                detector.DifferenceAreas.Remove(matchedArea); // إزالة الفرق الذي تم العثور عليه
-
-                if (detector.DifferenceAreas.Count == 0)
+                if (detector.DifferenceCircles.Count == 0)
                 {
                     MessageBox.Show("You found all differences!");
                     EndGame();
@@ -146,10 +146,10 @@ namespace Spot_Difference_Game
             }
             else
             {
-                Graphics g = pictureBox2.CreateGraphics();
-                
-                g.DrawEllipse(Pens.Red, e.X - 10, e.Y - 10, 40, 40);
-                g.Dispose();
+                using (Graphics g = pictureBox2.CreateGraphics())
+                {
+                    g.DrawEllipse(Pens.Red, e.X - 10, e.Y - 10, 40, 40);
+                }
 
                 soundManager.PlaySound(wrongSoundPath);
             }
@@ -158,7 +158,7 @@ namespace Spot_Difference_Game
         {
             gameTimer.Stop(); // نوقف المؤقت في جميع الحالات
 
-            if (detector.DifferenceAreas.Count == 0)
+            if (detector.DifferenceCircles.Count == 0)
             {
                 // اللاعب وجد جميع الاختلافات
                 soundManager.PlaySound(winSoundPath);

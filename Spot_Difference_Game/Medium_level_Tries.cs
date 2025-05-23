@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Emgu.CV;
+using Emgu.CV.Structure;
 
 namespace Spot_Difference_Game
 {
@@ -20,7 +21,7 @@ namespace Spot_Difference_Game
         private string wrongSoundPath = @"Sounds/wrong.mp3";
         private string winSoundPath = @"Sounds/588234__mehraniiii__win.wav";
         private string loseSoundPath = @"Sounds/382310__mountain_man__game-over-arcade.wav";
-        private int maxAttempts = 8;
+        private int maxAttempts = 10;
         private int currentAttempts = 0;
         public Medium_level_Tries()
         {
@@ -29,7 +30,7 @@ namespace Spot_Difference_Game
 
         private void btnLoadimage1_Click(object sender, EventArgs e)
         {
-            string imagePath = "pictures/1(1).jpg";
+            string imagePath = "pictures/medium.jpg";
 
             if (File.Exists(imagePath))
             {
@@ -47,7 +48,8 @@ namespace Spot_Difference_Game
 
         private void btnLoadimage2_Click(object sender, EventArgs e)
         {
-            string imagePath = "pictures/1(2).jpg";
+            string imagePath = "pictures/medium(edited).jpg";
+            
 
             if (File.Exists(imagePath))
             {
@@ -72,7 +74,7 @@ namespace Spot_Difference_Game
 
                 detector.DetectDifferences(mat1, mat2); // Now pass the Mats
 
-                lblFound.Text = $"Differences left: {detector.DifferenceAreas.Count}";
+                lblFound.Text = $"Differences left: {detector.DifferenceCircles.Count}";
 
             }
         }
@@ -86,7 +88,7 @@ namespace Spot_Difference_Game
 
         private void EndGame()
         {
-            if (detector.DifferenceAreas.Count == 0)
+            if (detector.DifferenceCircles.Count == 0)
             {
                 soundManager.PlaySound(winSoundPath);
                 MessageBox.Show("You win! Great job!");
@@ -108,38 +110,42 @@ namespace Spot_Difference_Game
 
         private void pictureBox2_MouseClick(object sender, MouseEventArgs e)
         {
-            if (image2 == null || detector.DifferenceAreas.Count == 0) return;
+            if (image2 == null || detector.DifferenceCircles.Count == 0) return;
 
             if (currentAttempts >= maxAttempts)
             {
                 EndGame();
                 return;
             }
+
             currentAttempts++;
             lblRemaining.Text = $"Attempts Left: {maxAttempts - currentAttempts}";
+
             float scaleX = (float)image2.Width / pictureBox2.Width;
             float scaleY = (float)image2.Height / pictureBox2.Height;
             Point realClick = new Point((int)(e.X * scaleX), (int)(e.Y * scaleY));
-            int tolerance = 25;
-            Rectangle matchedArea = detector.DifferenceAreas.FirstOrDefault(r =>
+
+            int tolerance = 30;
+
+            var matchedCircle = detector.DifferenceCircles.FirstOrDefault(circle =>
             {
-                Rectangle expanded = Rectangle.Inflate(r, tolerance, tolerance);
-                return expanded.Contains(realClick);
+                float dx = realClick.X - circle.Center.X;
+                float dy = realClick.Y - circle.Center.Y;
+                float distance = (float)Math.Sqrt(dx * dx + dy * dy);
+                return distance <= circle.Radius + tolerance;
             });
-            if (!matchedArea.IsEmpty)
+
+            if (!matchedCircle.Equals(default(CircleF)))
             {
-                // رسم دائرة خضراء
-                Graphics g = pictureBox2.CreateGraphics();
-                
-                g.DrawEllipse(Pens.Green, e.X - 10, e.Y - 10, 40, 40);
-                g.Dispose();
+                using (Graphics g = pictureBox2.CreateGraphics())
+                {
+                    g.DrawEllipse(Pens.Green, e.X - 10, e.Y - 10, 40, 40);
+                }
 
                 soundManager.PlaySound(correctSoundPath);
+                detector.DifferenceCircles.Remove(matchedCircle); // حذف الفرق
 
-                detector.DifferenceAreas.Remove(matchedArea);
-                // تحديث عدد الفروق المتبقية
-                lblFound.Text = $"Differences left: {detector.DifferenceAreas.Count}";
-                if (detector.DifferenceAreas.Count == 0)
+                if (detector.DifferenceCircles.Count == 0)
                 {
                     MessageBox.Show("You found all differences!");
                     EndGame();
@@ -147,18 +153,20 @@ namespace Spot_Difference_Game
             }
             else
             {
-                // رسم دائرة حمراء
-                Graphics g = pictureBox2.CreateGraphics();
-                g.DrawEllipse(Pens.Red, e.X - 10, e.Y - 10, 40, 40);
-                g.Dispose();
+                using (Graphics g = pictureBox2.CreateGraphics())
+                {
+                    g.DrawEllipse(Pens.Red, e.X - 10, e.Y - 10, 40, 40);
+                }
 
                 soundManager.PlaySound(wrongSoundPath);
-
-                // تحديث عدد الفروق 
-                lblFound.Text = $"Differences left: {detector.DifferenceAreas.Count}";
+                
             }
+
+            // تحديث عدد الفروق 
+            lblFound.Text = $"Differences left: {detector.DifferenceCircles.Count}";
+            
             // Check if player ran out of attempts
-            if (currentAttempts >= maxAttempts && detector.DifferenceAreas.Count > 0)
+            if (currentAttempts >= maxAttempts && detector.DifferenceCircles.Count > 0)
             {
                 MessageBox.Show("No attempts left!");
                 EndGame();
@@ -167,7 +175,7 @@ namespace Spot_Difference_Game
 
         private void lblRemaining_Click(object sender, EventArgs e)
         {
-            lblRemaining.Text = $"Attempts Left: {maxAttempts}";
+            lblRemaining.Text = $"Attempts Left: {maxAttempts - currentAttempts}";
         }
     }
 }

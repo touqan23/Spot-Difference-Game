@@ -128,7 +128,7 @@
             lblTimer.Name = "lblTimer";
             lblTimer.Size = new Size(149, 38);
             lblTimer.TabIndex = 23;
-            lblTimer.Text = "Timer : 20";
+            lblTimer.Text = "Timer : 40";
             // 
             // Medium_level_Timer
             // 

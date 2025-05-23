@@ -128,7 +128,7 @@
             lblTimer.Name = "lblTimer";
             lblTimer.Size = new Size(149, 38);
             lblTimer.TabIndex = 23;
-            lblTimer.Text = "Timer : 10";
+            lblTimer.Text = "Timer : 20";
             lblTimer.Click += lblTimer_Click;
             // 
             // Hard_level_Timer

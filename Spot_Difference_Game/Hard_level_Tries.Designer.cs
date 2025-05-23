@@ -48,9 +48,9 @@
             // 
             lblRemaining.Location = new Point(555, 386);
             lblRemaining.Name = "lblRemaining";
-            lblRemaining.Size = new Size(123, 55);
+            lblRemaining.Size = new Size(115, 55);
             lblRemaining.TabIndex = 32;
-            lblRemaining.Text = "Attempts Left : 5";
+            lblRemaining.Text = "Attempts Left : 8";
             lblRemaining.Click += lblRemaining_Click;
             // 
             // lblFound

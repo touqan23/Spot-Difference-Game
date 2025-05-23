@@ -10,37 +10,88 @@ namespace Spot_Difference_Game
 {
     internal class ImageDifferenceDetector
     {
-        public List<Rectangle> DifferenceAreas { get; private set; } = new List<Rectangle>();
+        public VectorOfVectorOfPoint Contours { get; private set; } = new VectorOfVectorOfPoint();
+        public List<CircleF> DifferenceCircles { get; private set; } = new List<CircleF>();
+        public Mat BinaryImage { get; private set; }
 
         public void DetectDifferences(Mat img1, Mat img2)
         {
-            Mat diff = new Mat();
-            CvInvoke.AbsDiff(img1, img2, diff);
+            // Subtract the images
+            Mat subimage = new Mat();
+            CvInvoke.AbsDiff(img1, img2, subimage);
 
+            // Convert to grayscale
             Mat gray = new Mat();
-            CvInvoke.CvtColor(diff, gray, Emgu.CV.CvEnum.ColorConversion.Bgr2Gray);
+            CvInvoke.CvtColor(subimage, gray, ColorConversion.Bgr2Gray);
 
-            Mat thresh = new Mat();
-            CvInvoke.Threshold(gray, thresh, 50, 255, Emgu.CV.CvEnum.ThresholdType.Binary);
+            // Threshold to binary
+            Mat binary = new Mat();
+            CvInvoke.Threshold(gray, binary, 30, 255, ThresholdType.Binary);
 
-            CvInvoke.Dilate(thresh, thresh, null, new Point(-1, -1), 2, Emgu.CV.CvEnum.BorderType.Default, new MCvScalar());//لتوسيع الفروق مشان موضوع اكتر من بكسل
+            BinaryImage = binary;
 
-            using (VectorOfVectorOfPoint contours = new VectorOfVectorOfPoint())
+            // Save binary for debugging
+            BinaryImage.Save("C:\\Users\\Touqa2003\\source\\repos\\Spot_Difference_Game\\Spot_Difference_Game\\pictures\\debug_binary.jpg");
+
+            // Find contours
+            Contours.Clear();
+            CvInvoke.FindContours(binary, Contours, null, RetrType.External, ChainApproxMethod.ChainApproxSimple);
+
+            // Filter and merge contours
+            List<CircleF> rawCircles = new List<CircleF>();
+
+            for (int i = 0; i < Contours.Size; i++)
             {
-                //عم دور على الحواف
-                CvInvoke.FindContours(thresh, contours, null, Emgu.CV.CvEnum.RetrType.External, Emgu.CV.CvEnum.ChainApproxMethod.ChainApproxSimple);
-                DifferenceAreas.Clear();
-                for (int i = 0; i < contours.Size; i++)
+                double area = CvInvoke.ContourArea(Contours[i]);
+
+                if (area < 50) continue; // 🧹 Skip small noise
+
+                CircleF circle = CvInvoke.MinEnclosingCircle(Contours[i]);
+                rawCircles.Add(circle);
+            }
+
+            // 🧠 Merge close circles
+            DifferenceCircles = MergeCloseCircles(rawCircles, mergeDistance: 40f);
+        }
+
+        private List<CircleF> MergeCloseCircles(List<CircleF> circles, float mergeDistance)
+        {
+            var merged = new List<CircleF>();
+
+            foreach (var circle in circles)
+            {
+                bool isMerged = false;
+
+                for (int i = 0; i < merged.Count; i++)
                 {
-                    Rectangle rect = CvInvoke.BoundingRectangle(contours[i]);
-                    if (rect.Width > 10 && rect.Height > 10)
+                    float dx = merged[i].Center.X - circle.Center.X;
+                    float dy = merged[i].Center.Y - circle.Center.Y;
+                    float distance = (float)Math.Sqrt(dx * dx + dy * dy);
+
+                    if (distance < mergeDistance)
                     {
-                        DifferenceAreas.Add(rect);
+                        // Merge by averaging centers and using the larger radius
+                        var avgCenter = new PointF(
+                            (merged[i].Center.X + circle.Center.X) / 2,
+                            (merged[i].Center.Y + circle.Center.Y) / 2
+                        );
+                        float maxRadius = Math.Max(merged[i].Radius, circle.Radius);
+
+                        merged[i] = new CircleF(avgCenter, maxRadius);
+                        isMerged = true;
+                        break;
                     }
                 }
+
+                if (!isMerged)
+                {
+                    merged.Add(circle);
+                }
             }
+
+            return merged;
         }
+
     }
 }
-
-    
+          

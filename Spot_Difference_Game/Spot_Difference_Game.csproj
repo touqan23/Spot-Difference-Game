@@ -11,6 +11,22 @@
   <ItemGroup>
     <None Remove="pictures\1 %281%29.jpg" />
     <None Remove="pictures\1 %282%29.jpg" />
+    <None Remove="pictures\5870899773563848765.jpg" />
+    <None Remove="pictures\5870899773563848766.jpg" />
+    <None Remove="pictures\5870899773563848767.jpg" />
+    <None Remove="pictures\Cat 4%28edited%29.jpg" />
+    <None Remove="pictures\Cat 4.jpg" />
+    <None Remove="pictures\easy%28edited%29.jpg" />
+    <None Remove="pictures\easy.jpg" />
+    <None Remove="pictures\medium%28edited%29.jpg" />
+    <None Remove="pictures\medium.jpg" />
+    <None Remove="pictures\Screenshot 2025-05-16 151231%28meduim_level%29%281%29%28edited%29.jpg" />
+    <None Remove="pictures\Screenshot 2025-05-16 151231%28meduim_level%29%281%29%28edited%29.png" />
+    <None Remove="pictures\Screenshot 2025-05-16 151231%28meduim_level%29%281%29.png" />
+    <None Remove="pictures\Screenshot 2025-05-16 151316%28meduim_level%29%282%29%28edited%29.png" />
+    <None Remove="pictures\Screenshot 2025-05-16 151316%28meduim_level%29%282%29.png" />
+    <None Remove="pictures\Spot-the-Difference-Easy-Characters%28easy_level%29%281%29.jpg" />
+    <None Remove="pictures\Spot-the-Difference-Easy-Characters%28easy_level%29%282%29.jpg" />
     <None Remove="Sounds\382310__mountain_man__game-over-arcade.wav" />
     <None Remove="Sounds\588234__mehraniiii__win.wav" />
     <None Remove="Sounds\correct.wav" />
@@ -33,6 +49,48 @@
     <Content Include="pictures\1 (2).jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="pictures\5870899773563848765.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pictures\Cat 4(edited).jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pictures\Cat 4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pictures\easy(edited).jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pictures\easy.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pictures\medium(edited).jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pictures\medium.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pictures\Screenshot 2025-05-16 151231(meduim_level)(1)(edited).jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pictures\Screenshot 2025-05-16 151231(meduim_level)(1)(edited).png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pictures\Screenshot 2025-05-16 151231(meduim_level)(1).png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pictures\Screenshot 2025-05-16 151316(meduim_level)(2)(edited).png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pictures\Screenshot 2025-05-16 151316(meduim_level)(2).png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pictures\Spot-the-Difference-Easy-Characters(easy_level)(1).jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pictures\Spot-the-Difference-Easy-Characters(easy_level)(2).jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sounds\382310__mountain_man__game-over-arcade.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -43,6 +101,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Sounds\wrong.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="pictures\5870899773563848766.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="pictures\5870899773563848767.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
